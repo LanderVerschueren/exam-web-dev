@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Contest;
+
+class HomeController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //$this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        date_default_timezone_set('Europe/Brussels'); // CDT
+        $current_date = date('Y-m-d');
+        
+        $contests = Contest::all();
+
+        return view('index', ['contests' => $contests, 'current_date' => $current_date]);
+    }
+}
