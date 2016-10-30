@@ -13,35 +13,25 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('users')->insert([
             'first_name'    => 'Lander',
-            'last_name'     => 'Verschueren',
             'password'      => bcrypt('lander'),
             'email'         => 'verschueren@live.nl',
-            'straat'        => 'Kapelstraat 10',
-            'woonplaats'    => 'Nieuwenrode',
-            'postcode'      => '1880',
-            'admin'         => true,
         ]);
         DB::table('users')->insert([
             'first_name'    => 'Anke',
-            'last_name'     => 'Verschueren',
             'password'      => bcrypt('anke'),
             'email'         => 'anke@live.nl',
-            'straat'        => 'Kapelstraat 10',
-            'woonplaats'    => 'Nieuwenrode',
-            'postcode'      => '1880',
-            'admin'         => false
         ]);
         DB::table('contests')->insert([
-            'winner'        => '',
-            'start_date'    => '2016-10-28',
-            'end_date'      => '2016-10-29',
+            'winner'        => 'Lander Verschueren',
+            'start_date'    => '2016-10-17',
+            'end_date'      => '2016-10-23',
             'winning_code'  => '123456789',
             'prize'         => 'Koelkast',
             'image'         => 'koelkast.png',
         ]);
         DB::table('contests')->insert([
             'winner'        => '',
-            'start_date'    => '2016-10-29',
+            'start_date'    => '2016-10-24',
             'end_date'      => '2016-10-30',
             'winning_code'  => '123456789',
             'prize'         => 'Fiets',
@@ -49,16 +39,16 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('contests')->insert([
             'winner'        => '',
-            'start_date'    => '2016-10-30',
-            'end_date'      => '2016-10-31',
+            'start_date'    => '2016-10-31',
+            'end_date'      => '2016-11-06',
             'winning_code'  => '123456789',
             'prize'         => 'Laptop',
             'image'         => 'laptop.png',
         ]);
         DB::table('contests')->insert([
             'winner'        => '',
-            'start_date'    => '2016-10-31',
-            'end_date'      => '2016-11-01',
+            'start_date'    => '2016-11-07',
+            'end_date'      => '2016-11-14',
             'winning_code'  => '123456789',
             'prize'         => 'Tablet',
             'image'         => 'tablet.png',

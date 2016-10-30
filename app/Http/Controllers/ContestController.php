@@ -25,9 +25,14 @@ class ContestController extends Controller
      */
     public function index( $id )
     {
-    	$contest = DB::table('contests')->where('id', '=', $id)->get();
     	$contest = Contest::find($id);
 
-        return view('contest.contest', ['contest' => $contest]);
+      return view('contest.contest', ['contest' => $contest]);
+    }
+
+    public function participate( $id ) {
+      $contest = Contest::find($id);
+
+      return view('contest.contest-participate', ['contest' => $contest]);
     }
 }

@@ -13,7 +13,9 @@
 
 Auth::routes();
 
-Route::get(			'/home', 			'HomeController@index');
-Route::get(			'/', 				'HomeController@index');
-Route::get(			'/dashboard',		'DashboardController@index');
-Route::get(			'/contest/{id}',	'ContestController@index');
+Route::get(			'/home',                   'HomeController@index');
+Route::get(			'/', 				               'HomeController@index');
+Route::get(			'/dashboard',		           'DashboardController@index');
+Route::get(			'/contest/{id}',	         'ContestController@index');
+Route::get(			'/contest-participate/{id}',	   'ContestController@participate');
+Route::post(			'/contestant',	   'ContestantController@index');

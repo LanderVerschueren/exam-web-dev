@@ -14,8 +14,19 @@
 						<img class="img-responsive" src="/img/{{ $contest->image }}" alt="Foto van {{ $contest->prize }}">
 					</div>
 					<div class="col-sm-8">
+						<p>
+							Winnaar:
+							@if ( $contest->winner != '' )
+								{{ ucfirst($contest->winner) }}
+							@else
+								TBA
+							@endif
+						</p>
 						<p>Begindatum: {{ $contest->start_date }}</p>
 						<p>Einddatum: {{ $contest->end_date }}</p>
+						<p>
+							<a href="/contest-participate/{{ $contest->id }}">Neem deel!</a>
+						</p>
 					</div>
 				</div>
 			</div>
