@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         DB::table('contests')->insert([
             'winner'        => 'Lander Verschueren',
             'start_date'    => '2016-10-17',
-            'end_date'      => '2016-10-23',
+            'end_date'      => '2016-10-24',
             'winning_code'  => '123456789',
             'prize'         => 'Koelkast',
             'image'         => 'koelkast.png',
@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         DB::table('contests')->insert([
             'winner'        => '',
             'start_date'    => '2016-10-24',
-            'end_date'      => '2016-10-30',
+            'end_date'      => '2016-10-31',
             'winning_code'  => '123456789',
             'prize'         => 'Fiets',
             'image'         => 'fiets.png',
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         DB::table('contests')->insert([
             'winner'        => '',
             'start_date'    => '2016-10-31',
-            'end_date'      => '2016-11-06',
+            'end_date'      => '2016-11-07',
             'winning_code'  => '123456789',
             'prize'         => 'Laptop',
             'image'         => 'laptop.png',

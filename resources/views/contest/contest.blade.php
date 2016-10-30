@@ -25,7 +25,11 @@
 						<p>Begindatum: {{ $contest->start_date }}</p>
 						<p>Einddatum: {{ $contest->end_date }}</p>
 						<p>
-							<a href="/contest-participate/{{ $contest->id }}">Neem deel!</a>
+							@if ( $open === true )
+								<a href="/contest-participate/{{ $contest->id }}">Neem deel!</a>
+							@else
+								Deze wedstijd is afgelopen!
+							@endif
 						</p>
 					</div>
 				</div>
