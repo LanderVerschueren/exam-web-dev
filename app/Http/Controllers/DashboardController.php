@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-Use App\User;
+use App\Contestant;
+use Illuminate\Support\Facades\Schema;
 
 class DashboardController extends Controller
 {
@@ -24,7 +25,22 @@ class DashboardController extends Controller
      */
     public function index()
     {
-    	$users = User::all();
-        return view('dashboard.dashboard', ['users' => $users]);
+        $columns = Schema::getColumnListing('contestants');
+    	$contestants = Contestant::all();
+
+        /*if( $contestants->name === "" ) {
+            echo "Leeg";
+            echo $contestants;
+        }
+        else {
+            echo "Vol";
+            echo $contestants;
+        }*/
+
+        return view('dashboard.dashboard', ['contestants' => $contestants, 'columns' => $columns]);
+    }
+
+    public function delete( $id ) {
+        echo $id;
     }
 }

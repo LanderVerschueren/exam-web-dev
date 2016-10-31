@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Contestant;
 
 class ContestantController extends Controller
 {
@@ -15,7 +16,7 @@ class ContestantController extends Controller
       $ip =$request->ip();
       echo $name;
 
-      DB::table('contestant')->insert(
+      /*DB::table('contestants')->insert(
           [
             'name' => $name,
             'adres' => $adres,
@@ -23,7 +24,17 @@ class ContestantController extends Controller
             'code' => $code,
             'ip' => $ip
           ]
-      );
+      );*/
+
+      $contestant = new Contestant;
+      $contestant->name = $name;
+      $contestant->adres = $adres;
+      $contestant->woonplaats = $woonplaats;
+      $contestant->code = $code;
+      $contestant->ip = $ip;
+
+      $contestant->save();
+
       return redirect('/');
 
       /*DB::table('contestant')->insert(

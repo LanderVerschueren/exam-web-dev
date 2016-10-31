@@ -13,7 +13,7 @@ class Contestant extends Migration
    */
   public function up()
   {
-      Schema::create('contestant', function (Blueprint $table) {
+      Schema::create('contestants', function (Blueprint $table) {
           $table->increments('id');
           $table->string('code')->unique();
           $table->string('name');
@@ -31,6 +31,6 @@ class Contestant extends Migration
    */
   public function down()
   {
-      Schema::dropIfExists('contestant');
+      Schema::dropIfExists('contestants');
   }
 }
