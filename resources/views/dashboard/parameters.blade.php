@@ -4,9 +4,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
+		@foreach( $contests as $contest )
 			<div class="panel panel-default">
-
-				@foreach( $contests as $contest )
 				<div class="panel-heading">
 				<h2 class="text-center">Adjust parameters of contests nr. {{ $contest->id }}</h2>
 				</div>
@@ -25,8 +24,8 @@
 					</div>
 					
 				</div>
-				@endforeach
 			</div>
+		@endforeach
 		</div>
 	</div>
 </div>
