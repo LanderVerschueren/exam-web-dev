@@ -16,6 +16,8 @@ Auth::routes();
 Route::get(			'/home',                   'HomeController@index');
 Route::get(			'/', 				               'HomeController@index');
 Route::get(			'/dashboard',		           'DashboardController@index');
+Route::get(			'/dashboard/parameters',		           'DashboardController@parameters');
+Route::post(		'/dashboard/parameters/{id}',				'DashboardController@parameters_update');
 Route::get(			'/dashboard/delete/{id}',		           'DashboardController@delete');
 Route::get(			'/dashboard/restore/{id}',		           'DashboardController@restore');
 Route::get(			'/contest/{id}',	         'ContestController@index');

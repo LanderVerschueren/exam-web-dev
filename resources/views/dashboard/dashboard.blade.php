@@ -8,6 +8,8 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Dashboard</div>
 				<div class="panel-body">
+					<span><a href="/dashboard/parameters" class="btn btn-default">Parameters aanpassen</a></span>
+
 					@if ( !($contestants->count() > 0) )
 						<p class="text-center">Nog geen contestants!</p>
 					@else

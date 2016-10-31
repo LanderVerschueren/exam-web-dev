@@ -36,7 +36,7 @@
             {!! Form::text('code', null, array('required', 'class' => 'form-control', 'placeholder' => 'Persoonlijke code')) !!}
           </div>
           <div class="form-group">
-            {!! Form::submit('Sla offer op') !!}
+            {!! Form::submit('Neem deel!') !!}
           </div>
           {!! Form::close() !!}
         </div>

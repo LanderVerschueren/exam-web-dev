@@ -21,6 +21,7 @@ class Contest extends Migration
             $table->string('winning_code')->unique();
             $table->string('prize');
             $table->string('image');
+            $table->timestamps();
         });
     }
 

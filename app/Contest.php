@@ -18,4 +18,9 @@ class Contest extends Model
     protected $hidden = [
         'winning_code',
     ];
+
+    public function contestants()
+    {
+      return $this->hasMany('App\Contestant');
+    }
 }

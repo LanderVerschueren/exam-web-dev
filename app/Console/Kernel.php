@@ -4,6 +4,9 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\DB;
+use App\Contest;
+use App\Contestant;
 
 class Kernel extends ConsoleKernel
 {
@@ -24,8 +27,24 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->call(function() {
+            $contests = Contest::with('contestants')->get();
+
+            date_default_timezone_set('Europe/Brussels'); // CDT
+            $current_date = date('Y-m-d');
+
+            foreach ($contests as $contest) {
+                if($contest->end_date <= $current_date) {
+                    foreach ($contest->contestants as $contestant) {
+                        if( $contestant->code === $contest->winning_code ) {
+                            $contest_winner = $contestant->name;
+                            $contest->winner = $contest_winner;
+                            $contest->save();
+                        }
+                    }
+                }
+            }
+        })->daily();
     }
 
     /**

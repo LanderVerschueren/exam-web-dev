@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
 
         DB::table('contests')->insert([
-            'winner'        => 'Lander Verschueren',
+            'winner'        => '',
             'start_date'    => '2016-10-17',
             'end_date'      => '2016-10-24',
             'winning_code'  => '123456789',
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'winner'        => '',
             'start_date'    => '2016-10-24',
             'end_date'      => '2016-10-31',
-            'winning_code'  => '987321654',
+            'winning_code'  => '456987123',
             'prize'         => 'Fiets',
             'image'         => 'fiets.png',
         ]);
@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
             'woonplaats'    => 'Nieuwenrode',
             'ip'            => '192.168.96.1',
             'contest_id'    => '1',
-            'code'          => '12345679',
+            'code'          => '123456789',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);

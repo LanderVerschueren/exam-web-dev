@@ -20,4 +20,9 @@ class Contestant extends Model
 	protected $dates = [
 	'deleted_at'
 	];
+
+	public function contest()
+    {
+      return $this->belongsTo('App\Contest');
+    }
 }

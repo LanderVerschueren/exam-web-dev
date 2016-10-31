@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contestant;
+use App\Contest;
 use Illuminate\Support\Facades\Schema;
 
 class DashboardController extends Controller
@@ -43,5 +44,27 @@ class DashboardController extends Controller
         ->where('id', $id)
         ->restore();
         return redirect('dashboard');
+    }
+
+    public function parameters() {
+        $contests = Contest::all();
+
+        return view('dashboard.parameters', ['contests' => $contests]);
+    }
+
+    public function parameters_update( Request $request, $id ) {
+        $contest = Contest::find( $id );
+        $start_date = $request->date('start_date');
+        $end_date = $request->date('end_date');
+
+        $contest->start_date = $start_date;
+        $contest->end_date = $end_date;
+        $contest->save();
+
+        echo $start_date;
+        echo $end_date;
+        echo $request->all();
+
+        return redirect();
     }
 }
