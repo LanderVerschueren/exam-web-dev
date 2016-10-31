@@ -3,14 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Contestant extends Model
 {
-  protected $fillable = [
-      'name', 'adres', 'wonplaats', 'code',
-  ];
+	use SoftDeletes;
 
-  protected $hidden = [
-      'ip',
-  ];
+	protected $fillable = [
+	'name', 'adres', 'wonplaats', 'code', 'contest_id',
+	];
+
+	protected $hidden = [
+	'ip',
+	];
+
+	protected $dates = [
+	'deleted_at'
+	];
 }

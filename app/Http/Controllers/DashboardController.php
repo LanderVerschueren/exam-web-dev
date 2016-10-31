@@ -26,21 +26,22 @@ class DashboardController extends Controller
     public function index()
     {
         $columns = Schema::getColumnListing('contestants');
-    	$contestants = Contestant::all();
-
-        /*if( $contestants->name === "" ) {
-            echo "Leeg";
-            echo $contestants;
-        }
-        else {
-            echo "Vol";
-            echo $contestants;
-        }*/
+    	$contestants = Contestant::withTrashed()->get();
 
         return view('dashboard.dashboard', ['contestants' => $contestants, 'columns' => $columns]);
     }
 
     public function delete( $id ) {
-        echo $id;
+        $contestant = Contestant::find( $id );
+
+        $contestant->delete();
+        return redirect('dashboard');
+    }
+
+    public function restore( $id ) {
+        $contestant = Contestant::withTrashed()
+        ->where('id', $id)
+        ->restore();
+        return redirect('dashboard');
     }
 }

@@ -20,6 +20,9 @@ class Contestant extends Migration
           $table->string('adres');
           $table->string('woonplaats');
           $table->string('ip');
+          $table->integer('contest_id')->unsigned();
+          $table->foreign('contest_id')->references('id')->on('contests');
+          $table->softDeletes();
           $table->timestamps();
       });
   }

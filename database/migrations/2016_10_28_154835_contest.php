@@ -18,7 +18,7 @@ class Contest extends Migration
             $table->string('winner');
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('winning_code');
+            $table->string('winning_code')->unique();
             $table->string('prize');
             $table->string('image');
         });

@@ -17,6 +17,7 @@ Route::get(			'/home',                   'HomeController@index');
 Route::get(			'/', 				               'HomeController@index');
 Route::get(			'/dashboard',		           'DashboardController@index');
 Route::get(			'/dashboard/delete/{id}',		           'DashboardController@delete');
+Route::get(			'/dashboard/restore/{id}',		           'DashboardController@restore');
 Route::get(			'/contest/{id}',	         'ContestController@index');
 Route::get(			'/contest-participate/{id}',	   'ContestController@participate');
-Route::post(			'/contestant',	   'ContestantController@index');
+Route::post(			'/contestant/{id}',	   'ContestantController@index');

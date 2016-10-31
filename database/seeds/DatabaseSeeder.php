@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,11 +17,8 @@ class DatabaseSeeder extends Seeder
             'password'      => bcrypt('lander'),
             'email'         => 'verschueren@live.nl',
         ]);
-        DB::table('users')->insert([
-            'first_name'    => 'Anke',
-            'password'      => bcrypt('anke'),
-            'email'         => 'anke@live.nl',
-        ]);
+
+
         DB::table('contests')->insert([
             'winner'        => 'Lander Verschueren',
             'start_date'    => '2016-10-17',
@@ -33,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'winner'        => '',
             'start_date'    => '2016-10-24',
             'end_date'      => '2016-10-31',
-            'winning_code'  => '123456789',
+            'winning_code'  => '987321654',
             'prize'         => 'Fiets',
             'image'         => 'fiets.png',
         ]);
@@ -41,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'winner'        => '',
             'start_date'    => '2016-10-31',
             'end_date'      => '2016-11-07',
-            'winning_code'  => '123456789',
+            'winning_code'  => '123789456',
             'prize'         => 'Laptop',
             'image'         => 'laptop.png',
         ]);
@@ -49,9 +47,73 @@ class DatabaseSeeder extends Seeder
             'winner'        => '',
             'start_date'    => '2016-11-07',
             'end_date'      => '2016-11-14',
-            'winning_code'  => '123456789',
+            'winning_code'  => '789123456',
             'prize'         => 'Tablet',
             'image'         => 'tablet.png',
+        ]);
+
+
+        DB::table('contestants')->insert([
+            'name'          => 'Lander Verschueren',
+            'adres'         => 'Kapelstraat 10',
+            'woonplaats'    => 'Nieuwenrode',
+            'ip'            => '192.168.96.1',
+            'contest_id'    => '1',
+            'code'          => '12345679',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+        DB::table('contestants')->insert([
+            'name'          => 'Anke Verschueren',
+            'adres'         => 'Kapelstraat 10',
+            'woonplaats'    => 'Nieuwenrode',
+            'ip'            => '192.168.96.1',
+            'contest_id'    => '1',
+            'code'          => '987654321',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+        DB::table('contestants')->insert([
+            'name'          => 'Emma Moortgat',
+            'adres'         => 'Kapelstraat 10',
+            'woonplaats'    => 'Nieuwenrode',
+            'ip'            => '192.168.96.1',
+            'contest_id'    => '1',
+            'code'          => '654897321',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+
+
+        DB::table('contestants')->insert([
+            'name'          => 'Lander Verschueren',
+            'adres'         => 'Kapelstraat 10',
+            'woonplaats'    => 'Nieuwenrode',
+            'ip'            => '192.168.96.1',
+            'contest_id'    => '2',
+            'code'          => '987321654',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+        DB::table('contestants')->insert([
+            'name'          => 'Anke Verschueren',
+            'adres'         => 'Kapelstraat 10',
+            'woonplaats'    => 'Nieuwenrode',
+            'ip'            => '192.168.96.1',
+            'contest_id'    => '2',
+            'code'          => '456987123',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+        DB::table('contestants')->insert([
+            'name'          => 'Emma Moortgat',
+            'adres'         => 'Kapelstraat 10',
+            'woonplaats'    => 'Nieuwenrode',
+            'ip'            => '192.168.96.1',
+            'contest_id'    => '2',
+            'code'          => '321654789',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
     }
 }

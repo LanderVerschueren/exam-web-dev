@@ -22,16 +22,24 @@
 						</thead>
 						<tbody>
 							@foreach ( $contestants as $contestant )
-								<tr>
+								<tr class="text-center">
 									<td>{{ $contestant->id }}</td>
 									<td>{{ $contestant->code }}</td>
 									<td>{{ $contestant->name }}</td>
 									<td>{{ $contestant->adres }}</td>
 									<td>{{ $contestant->woonplaats }}</td>
 									<td>{{ $contestant->ip }}</td>
+									<td>{{ $contestant->contest_id }}</td>
+									<td>{{ $contestant->deleted_at }}</td>
 									<td>{{ $contestant->created_at }}</td>
 									<td>{{ $contestant->updated_at }}</td>
-									<td><a href="/dashboard/delete/{{ $contestant->id }}" class="btn btn-default">Delete</span></a></td>
+									<td>
+										@if( !(isset( $contestant->deleted_at )) )
+											<a href="/dashboard/delete/{{ $contestant->id }}" class="btn btn-default">Delete</a>
+										@else
+											<a href="/dashboard/restore/{{ $contestant->id }}" class="btn btn-default">Restore</a>
+										@endif
+									</td>
 								</tr>
 							@endforeach
 						</tbody>
