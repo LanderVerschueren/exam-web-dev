@@ -12,7 +12,11 @@ class MyJob extends Command
      *
      * @var string
      */
+<<<<<<< HEAD
     protected $signature = 'do:myjob';
+=======
+    protected $signature = 'command:myjob';
+>>>>>>> b260700d3fcaf354dad3b9c314b953abe319f122
 
     /**
      * The console command description.
@@ -54,5 +58,9 @@ class MyJob extends Command
                     }
                 }
             }
+<<<<<<< HEAD
     }
+=======
+        }
+>>>>>>> b260700d3fcaf354dad3b9c314b953abe319f122
 }
