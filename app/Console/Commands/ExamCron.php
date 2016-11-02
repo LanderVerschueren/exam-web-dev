@@ -50,7 +50,9 @@ class ExamCron extends Command
         $current_date = date('Y-m-d');
 
         foreach ($contests as $contest) {
+            echo $contest->id . "\n";
             if($contest->end_date <= $current_date) {
+                echo $contest->id . "\n";
                 foreach ($contest->contestants as $contestant) {
                     if( $contestant->code === $contest->winning_code ) {
                         $contest_winner = $contestant->name;

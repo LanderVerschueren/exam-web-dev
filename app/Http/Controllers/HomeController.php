@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Contest;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -26,7 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         $contests = Contest::all();
+        $date = Carbon::now();
 
-        return view('index', ['contests' => $contests]);
+        return view('index', ['contests' => $contests, 'date' => $date]);
     }
 }

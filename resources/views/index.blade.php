@@ -22,7 +22,11 @@
 									<p class="text-center">
 										Winnaar:
 										@if ( $contest->winner != '' )
-											<h2 class="text-center">{{ ucfirst($contest->winner) }}</h2>
+											@if($contest->end_date < $date)
+												<h2 class="text-center">{{ ucfirst($contest->winner) }}</h2>
+											@else
+												<h2 class="text-center">Geen winnaar!</h2>
+											@endif
 										@else
 											<h2 class="text-center">TBA</h2>
 										@endif

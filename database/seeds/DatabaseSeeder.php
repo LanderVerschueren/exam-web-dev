@@ -115,5 +115,36 @@ class DatabaseSeeder extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
+        
+        DB::table('contestants')->insert([
+            'name'          => 'Lander Verschueren',
+            'adres'         => 'Kapelstraat 10',
+            'woonplaats'    => 'Nieuwenrode',
+            'ip'            => '192.168.96.1',
+            'contest_id'    => '3',
+            'code'          => '985321654',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+        DB::table('contestants')->insert([
+            'name'          => 'Anke Verschueren',
+            'adres'         => 'Kapelstraat 10',
+            'woonplaats'    => 'Nieuwenrode',
+            'ip'            => '192.168.96.1',
+            'contest_id'    => '3',
+            'code'          => '456977123',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+        DB::table('contestants')->insert([
+            'name'          => 'Emma Moortgat',
+            'adres'         => 'Kapelstraat 10',
+            'woonplaats'    => 'Nieuwenrode',
+            'ip'            => '192.168.96.1',
+            'contest_id'    => '3',
+            'code'          => '123789456',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
     }
 }
