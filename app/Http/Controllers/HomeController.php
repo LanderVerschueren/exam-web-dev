@@ -25,11 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        date_default_timezone_set('Europe/Brussels'); // CDT
-        $current_date = date('Y-m-d');
-        
         $contests = Contest::all();
 
-        return view('index', ['contests' => $contests, 'current_date' => $current_date]);
+        return view('index', ['contests' => $contests]);
     }
 }

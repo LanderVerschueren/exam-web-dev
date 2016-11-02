@@ -53,18 +53,21 @@ class DashboardController extends Controller
     }
 
     public function parameters_update( Request $request, $id ) {
+        $this->validate( $request, [
+            'start_date' => 'required|date|date_format:Y-m-d',
+            'end_date' => 'required|date|date_format:Y-m-d',
+        ]);
+        
         $contest = Contest::find( $id );
-        $start_date = $request->date('start_date');
-        $end_date = $request->date('end_date');
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
 
         $contest->start_date = $start_date;
         $contest->end_date = $end_date;
         $contest->save();
+        
+        \Session::flash("success", "Parameters zijn opgeslagen!");
 
-        echo $start_date;
-        echo $end_date;
-        echo $request->all();
-
-        return redirect();
+        return back();
     }
 }

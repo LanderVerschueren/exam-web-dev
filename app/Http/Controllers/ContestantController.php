@@ -34,9 +34,5 @@ class ContestantController extends Controller
       $contestant->save();
 
       return redirect('/');
-
-      /*DB::table('contestant')->insert(
-          ['email' => 'john@example.com', 'votes' => 0]
-      );*/
     }
 }
