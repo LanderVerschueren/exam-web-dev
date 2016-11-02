@@ -10,11 +10,11 @@ class Contestant extends Model
 	use SoftDeletes;
 
 	protected $fillable = [
-	'name', 'adres', 'wonplaats', 'code', 'contest_id',
+	'name', 'adres', 'wonplaats', 'code', 'contest_id', 'ip',
 	];
 
 	protected $hidden = [
-	'ip',
+	'ip', 'adres', 'woonplaats', 'code',
 	];
 
 	protected $dates = [

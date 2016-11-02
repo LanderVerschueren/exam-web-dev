@@ -12,11 +12,7 @@ class MyJob extends Command
      *
      * @var string
      */
-<<<<<<< HEAD
-    protected $signature = 'do:myjob';
-=======
     protected $signature = 'command:myjob';
->>>>>>> b260700d3fcaf354dad3b9c314b953abe319f122
 
     /**
      * The console command description.
@@ -44,23 +40,19 @@ class MyJob extends Command
     {
         $contests = Contest::with('contestants')->get();
 
-            date_default_timezone_set('Europe/Brussels'); // CDT
-            $current_date = date('Y-m-d');
+        date_default_timezone_set('Europe/Brussels'); // CDT
+        $current_date = date('Y-m-d');
 
-            foreach ($contests as $contest) {
-                if($contest->end_date <= $current_date) {
-                    foreach ($contest->contestants as $contestant) {
-                        if( $contestant->code === $contest->winning_code ) {
-                            $contest_winner = $contestant->name;
-                            $contest->winner = $contest_winner;
-                            $contest->save();
-                        }
+        foreach ($contests as $contest) {
+            if($contest->end_date <= $current_date) {
+                foreach ($contest->contestants as $contestant) {
+                    if( $contestant->code === $contest->winning_code ) {
+                        $contest_winner = $contestant->name;
+                        $contest->winner = $contest_winner;
+                        $contest->save();
                     }
                 }
             }
-<<<<<<< HEAD
-    }
-=======
         }
->>>>>>> b260700d3fcaf354dad3b9c314b953abe319f122
+    }
 }

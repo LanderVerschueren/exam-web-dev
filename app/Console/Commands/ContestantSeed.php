@@ -39,7 +39,7 @@ class ContestantSeed extends Command
      */
     public function handle()
     {
-        $contestant = factory(Contestant::class, 1)->create();
+        $contestant = factory(Contestant::class)->create();
         echo $contestant;
     }
 }

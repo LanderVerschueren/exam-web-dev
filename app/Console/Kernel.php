@@ -15,7 +15,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //'\App\Console\Commands\ContestantSeed',
         Commands\ExamCron::class,
         Commands\ContestantSeed::class,
     ];
@@ -28,8 +27,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('command:contestantseed')->everyMinute();
-        $schedule->command('command:examcron')->daily();
+        $schedule->command('command:contestant')->everyMinute();
+        $schedule->command('command:examcron')->everyMinute();
     }
 
     /**
