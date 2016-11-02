@@ -5772,3 +5772,10 @@ button.close {
     display: none !important; } }
 
 /*# sourceMappingURL=app.css.map */
+
+
+.img-responsive {
+    margin: 0 auto;
+    width: auto;
+    height: 200px;
+}

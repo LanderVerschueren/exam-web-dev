@@ -18,7 +18,7 @@
 					<div class="row">
 						@foreach( $contests as $contest )
 							<a href="/contest/{{ $contest->id }}">
-								<div class="col-sm-3">
+								<div class="col-sm-6">
 									<p class="text-center">
 										Winnaar:
 										@if ( $contest->winner != '' )
