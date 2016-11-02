@@ -78,7 +78,7 @@ class DashboardController extends Controller
             'email' => 'required|email',
         ]);
         
-        $user = User::all();
+        $user = User::first();
         $email = $request->input('email');
         $user->email = $email;
         $user->save();
