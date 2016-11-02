@@ -13,13 +13,14 @@
 
 Auth::routes();
 
-Route::get(			'/home',                   'HomeController@index');
-Route::get(			'/', 				               'HomeController@index');
-Route::get(			'/dashboard',		           'DashboardController@index');
-Route::get(			'/dashboard/parameters',		           'DashboardController@parameters');
-Route::post(		'/dashboard/parameters/{id}',				'DashboardController@parameters_update');
-Route::get(			'/dashboard/delete/{id}',		           'DashboardController@delete');
-Route::get(			'/dashboard/restore/{id}',		           'DashboardController@restore');
-Route::get(			'/contest/{id}',	         'ContestController@index');
-Route::get(			'/contest-participate/{id}',	   'ContestController@participate');
-Route::post(			'/contestant/{id}',	   'ContestantController@index');
+Route::get(			'/home',                        'HomeController@index');
+Route::get(			'/', 				            'HomeController@index');
+Route::get(			'/dashboard',		            'DashboardController@index');
+Route::get(			'/dashboard/parameters',		'DashboardController@parameters');
+Route::post(		'/dashboard/parameters/{id}',	'DashboardController@parameters_update');
+Route::get(			'/dashboard/delete/{id}',		'DashboardController@delete');
+Route::get(			'/dashboard/restore/{id}',		'DashboardController@restore');
+Route::get(         '/dashboard/email_update',      'DashboardController@email_update');
+Route::get(			'/contest/{id}',	            'ContestController@index');
+Route::get(			'/contest-participate/{id}',	'ContestController@participate');
+Route::post(		'/contestant/{id}',	            'ContestantController@index');

@@ -44,6 +44,17 @@
 						</div>
 						{!! Form::close() !!}
 					@endforeach
+					
+					<h3>Email van admin</h3>
+					{!! Form::model($users, ['url' => ['/dashboard/email_update']]) !!}
+					<div class="form-group">
+						{!! Form::label('email', 'E-mailadres:', ['class' => 'control-label']) !!}
+						{!! Form::email('email', null, array('required', 'class' => 'form-control')) !!}
+					</div>
+					<div class="form-group">
+						{!! Form::submit('Sla e-mailadres op') !!}
+					</div>
+					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>

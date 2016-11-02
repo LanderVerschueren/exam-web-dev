@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contestant;
 use App\Contest;
+use App\User;
 use Illuminate\Support\Facades\Schema;
 
 class DashboardController extends Controller
@@ -48,8 +49,9 @@ class DashboardController extends Controller
 
     public function parameters() {
         $contests = Contest::all();
+        $users = User::first();
 
-        return view('dashboard.parameters', ['contests' => $contests]);
+        return view('dashboard.parameters', ['contests' => $contests, 'users' => $users]);
     }
 
     public function parameters_update( Request $request, $id ) {
@@ -68,6 +70,19 @@ class DashboardController extends Controller
         
         \Session::flash("success", "Parameters zijn opgeslagen!");
 
+        return back();
+    }
+    
+    public function email_update( Request $request ) {
+        $this->validate( $request, [
+            'email' => 'required|email',
+        ]);
+        
+        $user = User::all();
+        $email = $request->input('email');
+        $user->email = $email;
+        $user->save();
+        
         return back();
     }
 }

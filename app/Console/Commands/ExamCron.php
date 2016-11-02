@@ -2,9 +2,13 @@
 
 namespace App\Console\Commands;
 
+use Mail;
+use Illuminate\Mail\Mailable;
 use Illuminate\Console\Command;
 use App\Contest;
 use App\Contestant;
+use App\User;
+use Illuminate\Support\Facades\DB;
 
 class ExamCron extends Command
 {
@@ -40,6 +44,7 @@ class ExamCron extends Command
     public function handle()
     {
         $contests = Contest::with('contestants')->get();
+        $user = DB::table('users')->where('first_name', 'admin')->pluck('email');
 
         date_default_timezone_set('Europe/Brussels');
         $current_date = date('Y-m-d');
@@ -51,6 +56,14 @@ class ExamCron extends Command
                         $contest_winner = $contestant->name;
                         $contest->winner = $contest_winner;
                         $contest->save();
+                        
+                        $data = ['contest_winner' => $contest_winner];
+        
+                        Mail::send('email.winner', $data, function($message) {
+                            $user = DB::table('users')->where('first_name', 'admin')->pluck('email');
+                            
+                            $message->to($user[0], 'Lander Verschueren')->subject('Winnaar van contest'); 
+                        });
                     }
                 }
             }

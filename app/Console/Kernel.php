@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('command:contestant')->everyMinute();
-        $schedule->command('command:examcron')->everyMinute();
+        $schedule->command('command:examcron')->daily();
     }
 
     /**
