@@ -38,7 +38,7 @@ class ContestantSeed extends Command
      *
      * @return mixed
      */
-    public function handle()
+    public function handle(\Faker\Generator $faker)
     {
         /*$contestant = factory(Contestant::class)->create();
         echo $contestant;*/

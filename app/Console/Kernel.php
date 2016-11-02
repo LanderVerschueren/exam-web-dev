@@ -15,8 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        '\App\Console\Commands\ContestantSeed',
         Commands\ExamCron::class,
-        Commands\ContestantSeed::class,
     ];
 
     /**
